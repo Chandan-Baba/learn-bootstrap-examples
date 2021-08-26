@@ -1,0 +1,241 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Checkout Form</title>
+
+    @*<link rel="stylesheet" href="~/Content/bootstrap.css" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h5>Billing Address</h5>
+
+            <div class="col-md-8">
+                <form class="needs-validation  col-md-8" novalidate>
+
+                    <div class="row pb-2">
+                        <div class=" form-group col-md-6">
+                            <label for="firstName">First name</label>
+                            <div >
+                                <input type="text" name="firstName" class="form-control is-invalid" 
+                                       aria-describedby="invalidCheckFirstName" required />
+                                <span id="invalidCheckFirstName" class="invalid-feedback"> Valid first name is required
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="lastName">Last name</label>
+                            <div>
+                                <input type="text" name="lastName" class="form-control is-invalid" 
+                                       aria-describedby="invalidCheckLastName" required />
+                                <span id="invalidCheckLastName" class="invalid-feedback"> Valid last name is required.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                        <div class="form-group pb-2">
+                            <label for="username">Username</label>
+                            <div class="input-group ">
+                                <span class="input-group-text">@@</span>
+                                @*<span class="input-group-text" id="inputGroupPrepend">@</span>*@
+                                <input type="text" name="username" class="form-control is-invalid" placeholder="Username" 
+                                    aria-describedby="invalidCheckUserName"   required />
+                                <span id="invalidCheckUserName" class="invalid-feedback"> Your username is required</span>
+                            </div>
+                        </div>
+                        <div class="form-group pb-2">
+                            <label for="email">Email (Optional)</label>
+                            <div class="input-group ">
+                                <input type="text" name="email" class="form-control" placeholder="you@example.com" />
+                                
+                            </div>
+                        </div>
+                        <div class="form-group pb-2">
+                            <label for="address">Address</label>
+                            <div class="input-group ">
+                                <input type="text" name="address" class="form-control is-invalid"
+                                  aria-describedby="invalidCheckAddress"     placeholder="1234 Main St"required />
+                                <span id="invalidCheckAddress" class="invalid-feedback"> Address Required</span>
+                            </div>
+                        </div>
+                        <div class="form-group pb-2">
+                            <label for="address 2">Address 2 (Optional)</label>
+                            <div class="input-group">
+                                <input type="text" name="address 2" class="form-control" placeholder="Apartment or suite" />
+                                @*<span> Last Name Required</span>*@
+                            </div>
+                        </div>
+
+                        <div class="form-group row ">
+                            <div class="col-md-4">
+                                <label>Country</label>
+                                <select id="Country"  class="form-select is-invalid" aria-describedby="invalidCheckCountry" required>
+                                    <option>Choose..</option>
+                                    <option>United States</option>
+                                </select>
+                                <span id="invalidCheckCountry" class="invalid-feedback"> Please select a valid country.</span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>State</label>
+                                <select id="State" class="form-select is-invalid" aria-describedby="invalidCheckState" required>
+                                    <option>Choose..</option>
+                                    <option>California</option>
+                                </select>
+                                <span id="invalidCheckState" class="invalid-feedback"> Please provide a valid state.</span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>Zip</label>
+                                <input type="text" id="zip " class="form-select is-invalid" aria-describedby="invalicheckZip" required />
+                                <span id="invalicheckZip" class="invalid-feedback"> Zip code required.</span>
+                            </div>
+                        </div>
+                      
+                        <hr />
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Shipping address is the same as my billing address</label>
+
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Save this information for next time</label>
+                        </div>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="form-check">
+                            <input class="form-check-input"
+                                   type="radio" />
+                            <label class="form-check-label" for="flexRadioDefault1"> Credit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input"
+                                   type="radio" />
+                            <label class="form-check-label" for="flexRadioDefault1"> Debit card </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input"
+                                   type="radio" />
+                            <label class="form-check-label" for="flexRadioDefault1"> Paypal </label>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label for="NameOnCard">Name On card</label>
+                                <div >
+                                    <input type="text" name="NameOnCard" class="input-group" />
+                                    <span> Full name as displayed on card</span>
+                                    <span class="invalid-feedback">  Name on card is required</span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="CreditCardNumber">Credit card number</label>
+                                <div>
+                                    <input type="text" name="CreditCardNumber"  class="input-group" />
+                                    <span class="invalid-feedback"> Credit card number is required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-3">
+                                <label for="expiration">Expiration</label>
+                                <div>
+                                    <input type="text" name="expiration"  class="input-group"/>
+                                   
+                                    <span class="invalid-feedback">  Expiration date required</span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="Cvv">CVV</label>
+                                <div>
+                                    <input type="text" name="Cvv"  class="input-group" />
+                                    <span class="invalid-feedback">  Security code required</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <button type="submit" class="btn btn-primary " value="Continue to checkout"> Continue to checkout</button>
+                            
+                        </div>
+                   
+                </form>
+            </div>
+
+            <div class="col-md-3">
+                <h4>Your Cart</h4>
+                <div class="pb-4">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <h6 class="col">Product name</h6>
+                                <span class="col text-end">$12</span>
+                            </div>
+
+                            <span>Brief description</span>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <h6 class="col">Second product</h6>
+                                <span class="col text-end">$8</span>
+
+                            </div>
+                            <span>Brief description</span>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <h6 class="col"> Third item</h6>
+                                <span class="col text-end">$5</span>
+
+                            </div>
+                            <span>Brief description</span>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <h6 class="col"> Promo code</h6>
+                                <span class="col text-end">-$5</span>
+                            </div>
+                            <span>EXAMPLECODE</span>
+
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="row">
+                                <h6 class="col">Total (USD)</h6>
+                                <span class="col text-end">$20</span>
+
+                            </div>
+                            <span>Brief description</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card"></div>
+                <div class="input-group-append card-body">
+                    <div class="input-group pb-4">
+                        <input type="text" class="form-control" placeholder="Promo code">
+                        <div class="input-group-append">
+
+                            <button type="submit" class="btn btn-secondary   input-group-text">Submit</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+                </div>
+            </div>
+        
+</body>
+</html>
