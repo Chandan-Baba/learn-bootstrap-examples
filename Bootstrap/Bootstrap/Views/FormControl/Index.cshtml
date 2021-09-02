@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <title>Form Controls</title>
+</head>
+<body>
+    <div class="py-3 text-center">
+        @*Py => Padding top,bottom*@
+        <h2>Checkout Form</h2>
+    </div>
+    <div class="row">  
+        <div class="col-md-10 order-md-0 mb-4">
+            @*md => 12(8,4) and set size for greater than medium screen*@
+            <h4 class="mb-2">Billing address</h4> @*mb => margin bottom*@
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        @*md to xl => 12(6+6) with margin bottom*@
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="firstName" required="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="lastName" required="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    @*mb => margin-bottom 3 and in default 12 for a row*@
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <div class="input-group-append">
+                            @*Behaving same for both append and prepend*@
+                            <span class="input-group-text">@@</span> @*To escape @ symbol from cshtml used as @@*@
+                        </div>
+                        <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    @*mb => margin-bottom 3 and in default 12 for a row*@
+                    <label for="email">Email <span class="text-muted">(Optional)</span></label> @*Class "text-muted" for fading the text*@
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                </div>
+
+                <div class="mb-3">
+                    @*mb => margin-bottom 3 and in default 12 for a row*@
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                </div>
+
+                <div class="mb-3">
+                    @*mb => margin-bottom 3 and in default 12 for a row*@
+                    <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label> @*Class "text-muted" for fadding the text*@
+                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+
+                <div class="row">
+                    @*12(md to xl(5+4+3 =12) and display-block and width-100 is for occuping full Width of form with flexible display)*@
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Country</label>
+                        <select class="custom-select d-block w-100" id="country" required="">
+                            <option value="">Choose...</option>
+                            <option>United States</option>
+                        </select> 
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="state">State</label>
+                        <select class="custom-select d-block w-100" id="state" required="">
+                            <option value="">Choose...</option>
+                            <option>California</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="zip">Zip</label>
+                        <input type="text" class="form-control" id="zip" placeholder="" required="">
+                    </div>
+                </div>
+                <hr class="mb-3"> @*Show horizontal line to seperate both div with margin bottom*@
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="same-address">
+                    <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="save-info">
+                    <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                </div>
+                <hr class="mb-3"> @*Show horizontal line to seperate both div with margin bottom*@
+
+                <h4 class="mb-2">Payment</h4>
+
+                <div class="row ">
+                    <div class="row col-md-4 order-md-1 mb-3">
+                        @*d(display)-block => Occupies full width of the form and my-margin(top,bottom)*@
+                        <div class="custom-control custom-radio">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="paypal">Paypal</label>
+                        </div>
+                    </div>
+                    
+                    <div class="row col-md-8 order-md-2 mb-3">
+                        <div class="col-md-6 mb-2">
+                            @* md to xl with margin bottom*@
+                            <label for="cc-name">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="Full name displayed" required="">
+                            <!--<small class="text-muted">Full name as displayed on card</small>--> @*Fading-text*@
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            @* md to xl with margin bottom*@
+                            <label for="cc-number">Credit card number</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="xxxx-xxxx-xxxx" required="">
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label for="cc-expiration">Expiration</label>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="mm/yy" required="">
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label for="cc-expiration">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="mm/yy" required="">
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-2">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
+            </form>
+        </div>
+    </div>
+</body>
